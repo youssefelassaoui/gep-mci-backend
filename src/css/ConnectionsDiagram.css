@@ -1,0 +1,202 @@
+.connections {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Prevent interactions */
+}
+
+.line {
+  position: absolute;
+  height: 2px;
+  border-top: 2px dotted #71b04d; /* Dotted line */
+  z-index: 1;
+}
+
+/* Line from left to center */
+.left-to-center {
+  top: 50%;
+  left: 20%;
+  width: 30%;
+  transform: translateY(-50%);
+}
+
+/* Line from center to top */
+.center-to-top {
+  top: 51%;
+  left: 50%;
+  width: 30%;
+  transform: translateY(-50%);
+  border-left: 2px dotted #77b254;
+  height: 223px;
+}
+
+/* Line from center to middle */
+.center-to-middle {
+  top: 50%;
+  left: 50%;
+  width: 30%;
+  transform: translateY(-50%);
+}
+
+/* Line from center to bottom */
+.center-to-bottom {
+  top: 74%;
+  left: 50%;
+  width: 30%;
+  transform: translateY(50%);
+  height: 60px;
+}
+
+/* Black Points */
+.point {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #000;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+/* Point at the start of the left-to-center line */
+.point-left {
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+}
+
+/* Point where the lines touch in the center */
+.point-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Point at the start of the center-to-top line */
+.point-top {
+  top: 19.4%; /* Matches the top of the .center-to-top line */
+  right: 19%;
+  transform: translate(-50%, -50%);
+}
+
+/* Point at the start of the center-to-bottom line */
+.point-bottom {
+  top: 82.5%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+}
+
+/* Point at the start of the center-to-middle line */
+.point-right {
+  top: 50%;
+  right: 19%;
+  transform: translate(-50%, -50%);
+}
+
+/* Animated Energy Flux Point */
+.flux-point {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #ff9800; /* Energy flux color */
+  border-radius: 50%;
+  z-index: 3;
+  animation: move-left-to-center 2s linear infinite;
+}
+
+/* Splitting flux points */
+.flux-point-top {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #8bc34a;
+  border-radius: 50%;
+  z-index: 3;
+  animation: move-center-to-top 2s linear infinite;
+}
+
+.flux-point-middle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #8bc34a;
+  border-radius: 50%;
+  z-index: 3;
+  animation: move-center-to-middle 2s linear infinite;
+}
+
+.flux-point-bottom {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #8bc34a;
+  border-radius: 50%;
+  z-index: 3;
+  animation: move-center-to-bottom 2s linear infinite;
+}
+
+/* Animation for moving from left to center */
+@keyframes move-left-to-center {
+  0% {
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Animation for moving from center to top */
+@keyframes move-center-to-top {
+  0% {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  50% {
+    top: 19%; /* Move up first */
+    left: 50%; /* Stay centered */
+  }
+  100% {
+    top: 18%; /* Final top position */
+    left: 76%; /* Turn right at the last moment */
+  }
+}
+
+/* Animation for moving from center to middle */
+/* Adjusted animation for moving from center to middle */
+@keyframes move-center-to-middle {
+  0% {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    top: 50%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.flux-point-middle {
+  animation: move-center-to-middle 2s linear infinite;
+}
+
+/* Animation for moving from center to bottom */
+@keyframes move-center-to-bottom {
+  0% {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  50% {
+    top: 82%; /* Move down first */
+    left: 50%; /* Stay centered */
+  }
+  100% {
+    top: 82%; /* Final bottom position */
+    left: 76%; /* Turn right at the last moment */
+  }
+}

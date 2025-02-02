@@ -1,0 +1,30 @@
+.africa-map path {
+    fill: #d3d3d3; /* Default country color */
+    stroke: #333;
+    transition: fill 0.3s ease;
+  }
+  
+  .africa-map path:hover {
+    fill: #ffa500; /* Highlight on hover */
+    cursor: pointer;
+  }
+  
+  .africa-map path.morocco {
+    fill: red; /* Morocco */
+  }
+  
+  .africa-map path.cote-ivoire {
+    fill: red; /* Côte d'Ivoire */
+  }
+  
+  .tooltip {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    pointer-events: none;
+    font-size: 14px;
+    z-index: 1000;
+  }
+  
